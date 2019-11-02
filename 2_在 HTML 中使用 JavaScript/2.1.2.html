@@ -1,0 +1,21 @@
+<!--
+ * @Description: 测试延迟脚本
+ * @Author: Li Qingguo
+ * @Date: 2019-11-02 23:10:28
+ * @FilePath: \2_在 HTML 中使用 JavaScript\2.1.2.html
+ * @Environment: Google Chrome 78.0.3904.87
+ * @LastEditor: Li Qingguo
+ * @LastEditedTime: 2019-11-02 23:21:20
+ -->
+<!DOCTYPE html>
+<html>
+<!--设置了 defer 的 js 会在内容后执行，但是测试发现，若是 head 里有其他普通 js ，设置了 defer 的 js 也会先于内容执行-->
+<head>
+    <script type="text/javascript" defer="defer" src="defer.js"></script>
+</head>
+
+<body>
+    <p>我是丰富多彩的网页内容</p>
+</body>
+
+</html>
