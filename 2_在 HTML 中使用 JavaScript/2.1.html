@@ -1,0 +1,55 @@
+<!--
+ * @Description: 测试 <script> 标签
+ * @Author: Li Qingguo
+ * @Date: 2019-11-02 18:45:03
+ * @FilePath: \2_在 HTML 中使用 JavaScript\2.1.html
+ * @Environment: Google Chrome 78.0.3904.87
+ * @LastEditor: Li Qingguo
+ * @LastEditedTime: 2019-11-02 21:22:36
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--约定俗成的经典 type 定义-->
+    <script type="text/javascript">
+        alert('type="text/javascript"'); 
+    </script>
+    <!--这样也行-->
+    <script type="application/javascript">
+        alert('type="application/javascript"'); 
+    </script>
+    <!--这样也行-->
+    <script type="application/ecmascript">
+        alert('type="application/ecmascript"'); 
+    </script>
+    <!--这样也行-->
+    <script type="">
+        alert('type=""'); 
+    </script>
+    <!--这样也行 默认是text/javascript-->
+    <script>
+        alert("no type given"); 
+    </script>
+    <!--这样的 type 不行-->
+    <script  type="somethingelse/whatever">
+        alert('type="somethingelse/whatever"'); 
+    </script>
+    <!--JavaScript 代码中出现 </script> 会出错，加 \ 转义-->
+    <script>
+        alert("<\/script>");
+    </script>
+    <!--导入外部的 JavaScript-->
+    <script type="text/javascript" src="sayHi.js"></script>
+    <!--导入外部的 JavaScript 后内嵌的代码会被忽略-->
+    <script type="text/javascript" src="sayHi.js">
+        alert("you can't see me");
+    </script>
+</head>
+
+<body>
+    <p>终于点完确定了orz</p>
+</body>
+
+</html>
