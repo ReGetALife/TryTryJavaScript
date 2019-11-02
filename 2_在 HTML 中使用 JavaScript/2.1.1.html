@@ -1,0 +1,28 @@
+<!--
+ * @Description: 验证 js 的加载顺序
+ * @Author: Li Qingguo
+ * @Date: 2019-11-02 22:03:59
+ * @FilePath: \2_在 HTML 中使用 JavaScript\2.1.1.html
+ * @Environment: Google Chrome 78.0.3904.87
+ * @LastEditor: Li Qingguo
+ * @LastEditedTime: 2019-11-02 23:04:05
+ -->
+<!DOCTYPE html>
+<html>
+<!--
+        放在 head 中会先于内容加载，放在 body 中的内容之后，会后于内容加载。
+        不过实际测试发现，并没有这么简单，它跟 js 脚本是否是内嵌的，内容之前是否出现过 js，js 的位置，js是否是同一个都有关。
+        有待考究。
+    -->
+
+<head>
+    <script type="text/javascript" src="inHead.js"></script>
+</head>
+
+
+<body>
+    <p>我是丰富多彩的网页内容</p>
+    <script type="text/javascript" src="inBody.js"></script>
+</body>
+
+</html>
