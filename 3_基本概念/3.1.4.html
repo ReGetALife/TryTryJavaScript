@@ -1,0 +1,51 @@
+<!--
+ * @Description: 声明 strict 模式的方法
+ * @Author: Li Qingguo
+ * @Date: 2019-11-04 23:44:04
+ * @FilePath: \3_基本概念\3.1.4.html
+ * @Environment: Google Chrome 78.0.3904.87
+ * @LastEditor: Li Qingguo
+ * @LastEditedTime: 2019-11-05 22:27:05
+ -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<!--strict 模式下 js 的执行会有一些差异，这里通过使用未声明的变量来测试-->
+
+<head>
+    <!--整段脚本都是正常模式-->
+    <script type="text/javascript">
+        string1 = "normal";
+        alert(string1);
+    </script>
+    <!--整段脚本都是严格模式，会报错-->
+    <script type="text/javascript">
+        "use strict";
+        string2 = "you can't see me in strict mode";
+        alert(string2);
+    </script>
+    <!--函数范围内的严格模式-->
+    <script type="text/javascript">
+        function normalFun() {
+            string3 = "normal function";
+            alert(string3);
+        }
+        function strictFun() {
+            "use strict";
+            string4 = "you can't see me in strict mode";
+            alert(string4);
+        }
+
+        normalFun();
+        strictFun();
+    </script>
+</head>
+
+<body>
+    <p>我是丰富多彩的网页内容</p>
+</body>
+
+</html>
