@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<!--strict 模式下 js 的执行会有一些差异，这里通过使用未声明的变量来测试-->
+
+<head>
+    <!--变量的值的类型是可以改变的-->
+    <script type="text/javascript">
+        var val = "string";
+        val = 1024;
+        alert(val);
+    </script>
+    <!--var 声明的变量是有作用域的，如下代码会报错-->
+    <script type="text/javascript">
+        function test2(){
+            var val2 = "only exists in this function";
+        }
+        test2();
+        alert(val2);
+    </script>
+    <!--非严格模式下，不用 var 声明将成为全局变量，严格模式下不允许-->
+    <script type="text/javascript">
+        function test3(){
+            val3 = "global value";
+        }
+        test3();
+        alert(val3);
+    </script>
+</head>
+
+<body>
+    <p>我是丰富多彩的网页内容</p>
+</body>
+
+</html>
