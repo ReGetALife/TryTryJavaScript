@@ -1,0 +1,36 @@
+<!--
+ * @Description: 测试 boolean 值的转换
+ * @Author: Li Qingguo
+ * @Date: 2019-11-08 23:52:47
+ * @FilePath: \3_基本概念\3.4.4.html
+ * @Environment: Google Chrome 78.0.3904.87
+ * @LastEditor: Li Qingguo
+ * @LastEditedTime: 2019-11-09 23:18:38
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+         //任何数据类型都可以通过 Boolean() 函数转化为布尔值，在控制流语句（如 if）中这种转换是自动执行的
+         //字符串
+         alert("non-empty string: "+Boolean("string"));
+         alert("empty string: "+Boolean(""));
+         //数值
+         alert("non-zero number: "+Boolean(233));
+         alert("zero number: "+Boolean(0));
+         alert("not a number (NaN): "+Boolean(NaN));//是一种特殊的数值
+         //对象
+         alert("any object: "+Boolean({}));
+         alert("null object: "+Boolean(null));
+         //undefined
+         alert("undefined: "+Boolean(undefined));
+    </script>
+</head>
+
+<body>
+    <p>我是丰富多彩的网页内容</p>
+</body>
+
+</html>
