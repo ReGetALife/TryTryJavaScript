@@ -5,16 +5,24 @@
  * @FilePath: \3_基本概念\3.4.5.html
  * @Environment: Google Chrome 78.0.3904.87
  * @LastEditor: Li Qingguo
- * @LastEditedTime: 2019-11-10 23:57:26
+ * @LastEditedTime: 2019-11-11 23:20:11
  -->
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
     <script type="text/javascript">
-         //八进制的表示
-         
+        //八进制的表示
+        var octal1 = 070;//56
+        alert("octal1: " + octal1);
+        var octal2 = 079;//79，因为9不是有效的八进制数字，按十进制处理
+        alert("octal2: " + octal2);         
+    </script>
+    <script type="text/javascript">
+        "use strict";
+        var octal3 = 070;//报错，严格模式下不允许八进制字面量
+        alert("octal3: " +octal3);
     </script>
 </head>
 
