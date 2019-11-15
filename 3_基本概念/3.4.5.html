@@ -5,41 +5,92 @@
  * @FilePath: \3_基本概念\3.4.5.html
  * @Environment: Google Chrome 78.0.3904.87
  * @LastEditor: Li Qingguo
- * @LastEditedTime: 2019-11-14 23:50:59
+ * @LastEditedTime: 2019-11-15 18:50:57
  -->
 
 <!DOCTYPE html>
 <html>
 
 <head>
+    <!--八进制的表示-->
     <script type="text/javascript">
-        //八进制的表示
+
         var octal1 = 070;//56
-        alert("octal1: " + octal1);
+        alert("octal1 : " + octal1);
         var octal2 = 079;//79，因为9不是有效的八进制数字，按十进制处理
-        alert("octal2: " + octal2);         
+        alert("octal2 : " + octal2);         
     </script>
     <script type="text/javascript">
         "use strict";
         var octal3 = 070;//报错，严格模式下不允许八进制字面量
-        alert("octal3: " + octal3);
+        alert("octal3 : " + octal3);
     </script>
+
+    <!--十六进制的表示-->
     <script type="text/javascript">
-        //十六进制的表示
         var hex1 = 0xa;
-        alert("hex1: " + hex1);//10
+        alert("hex1 : " + hex1);//10
     </script>
+
+    <!--浮点数的表示-->
     <script type="text/javascript">
-        //浮点数的表示
         var float1 = 1.1;
         var float2 = .1;
-        alert("float1: " + float1);//1.1
-        alert("float2: " + float2);//0.1
+        alert("float1 : " + float1);//1.1
+        alert("float2 : " + float2);//0.1
         //浮点数自动转化为整数
         var float3 = 1.;
         var float4 = 10.0;
-        alert("float3: " + float3);//1
-        alert("float4: " + float4);//10
+        alert("1. : " + float3);//1
+        alert("10.0 : " + float4);//10
+    </script>
+    <script type="text/javascript">
+        //浮点数的e表示法（科学计数法）
+        var float5 = 2.333e3;
+        alert("2.333e3 : " + float5);//233
+        var float6 = 666e-3;
+        alert("666e-3 : " + float6);//0.666
+        //绝对值太大或者太小的浮点数会被转化为e表示法，转化过程可能会有精度损失
+        var float7 = 1000000000000000000001;
+        alert("1000000000000000000001 : " + float7);//1e+21
+        var float8 = 0.0000001;
+        alert("0.0000001 : " + float8);//1e-7
+        //浮点数是不精确的，不要用来比较
+        alert("0.1 + 0.2 = " + (0.1 + 0.2));
+    </script>
+
+    <!--number 能保存的数值范围（绝对值）-->
+    <script type="text/javascript">
+        alert("min : " + Number.MIN_VALUE);
+        alert("max : " + Number.MAX_VALUE);
+        //绝对值大过范围会变成 Infinity
+        alert("too large : " + (Number.MAX_VALUE * 2));
+        //绝对值小过范围会变成 0
+        alert("too small : " + (Number.MIN_VALUE * 0.1));
+    </script>
+
+    <!--测试 NaN-->
+    <script type="text/javascript">
+        //非数值参与了数值运算可能会得到 NaN
+        alert('1 * "a" : '+(1 * "a"));
+        //NaN 于其他数运算也会得到 NaN
+        alert('NaN + 1 : ' + (NaN + 1));
+        //NaN 与任何数（包括 NaN）比较都是 false
+        alert('NaN == NaN : ' + (NaN == NaN));
+    </script>
+
+    <!--测试 NaN-->
+    <script type="text/javascript">
+        //isNaN() 会先尝试把参数转化成数值
+        alert('isNaN(NaN) : ' + (isNaN(NaN)));//true
+        alert('isNaN(1) : ' + (isNaN(1)));//false
+        alert('isNaN("1") : ' + (isNaN("1")));//false
+        alert('isNaN("a") : ' + (isNaN("a")));//true
+        alert('isNaN(undefined) : ' + (isNaN(undefined)));//true
+        alert('isNaN(true) : ' + (isNaN(true)));//false
+        alert('isNaN(null) : ' + (isNaN(null)));//false，null 转化为 0
+        alert('isNaN({}) : ' + (isNaN({})));//true
+        alert(valueOf({}));//true
     </script>
 </head>
 
