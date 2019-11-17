@@ -1,0 +1,54 @@
+<!--
+ * @Description: 验证字符串的表示
+ * @Author: Li Qingguo
+ * @Date: 2019-11-17 22:05:31
+ * @FilePath: \3_基本概念\3.4.6.html
+ * @Environment: Google Chrome 78.0.3904.87
+ * @LastEditor: Li Qingguo
+ * @LastEditedTime: 2019-11-17 23:18:01
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        //字符串的表示
+        var singleQuote = 'single quote " "';
+        var doubleQuote = "double quote ' '";
+        alert(singleQuote);
+        alert(doubleQuote);
+        //转义序列，跟在 \ 后面
+        var text = 'a line\nnew line \x41 \u03a3';
+        alert(text);
+        //toString() 转化为字符串
+        var number = 233;
+        var boolean = true;
+        var obj = {
+            name: "Lee",
+            toString() {
+                return `{ name: ${this.name} }`;
+            }
+        };//没有提供 toString() 方法的对象将不会正常显示
+        alert(number.toString());
+        alert(boolean.toString());
+        alert(obj.toString());
+        alert(null.toString());//报错
+        alert(undefined.toString());//报错
+    </script>
+    <script type="text/javascript">
+        //number 的 toString() 可以指定进制
+        var number = 10;
+        alert(number.toString());//10
+        alert(number.toString(2));//1010
+        //可以使用比较通用的 String() 函数处理 null 和 undefined
+        alert(String(null));
+        alert(String(undefined));
+        alert(String(number));//只能是十进制了
+    </script>
+</head>
+
+<body>
+    <p>朴实无华的字符串</p>
+</body>
+
+</html>
