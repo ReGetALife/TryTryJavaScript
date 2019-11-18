@@ -1,0 +1,29 @@
+<!--
+ * @Description: 测试 Object
+ * @Author: Li Qingguo
+ * @Date: 2019-11-18 23:17:01
+ * @FilePath: \3_基本概念\3.4.7.html
+ * @Environment: Google Chrome 78.0.3904.87
+ * @LastEditor: Li Qingguo
+ * @LastEditedTime: 2019-11-18 23:24:15
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        //es 中的对象都继承自 Object，因此都拥有 Object 的属性和方法
+        var obj = {};
+        alert(obj.constructor);//构造器
+        alert(obj.hasOwnProperty('p'));
+        alert(obj.isPrototypeOf(new Object()));
+        alert(obj.toString());
+        alert(obj.valueOf());
+    </script>
+</head>
+
+<body>
+    <p>有对象了</p>
+</body>
+
+</html>
